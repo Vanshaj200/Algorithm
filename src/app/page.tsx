@@ -1,6 +1,8 @@
 import { DashboardLayout } from "@/components/layout/dashboard-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Star, Database, Brain, BarChart3 } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -111,18 +113,30 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <button className="w-full text-left p-3 rounded-md border hover:bg-accent">
-                  <div className="font-medium">Upload New Data</div>
-                  <div className="text-sm text-muted-foreground">CSV or JSON files</div>
-                </button>
-                <button className="w-full text-left p-3 rounded-md border hover:bg-accent">
-                  <div className="font-medium">Run AI Analysis</div>
-                  <div className="text-sm text-muted-foreground">Exoplanet detection</div>
-                </button>
-                <button className="w-full text-left p-3 rounded-md border hover:bg-accent">
-                  <div className="font-medium">View Visualizations</div>
-                  <div className="text-sm text-muted-foreground">Interactive charts</div>
-                </button>
+                <Link href="/data-hub">
+                  <Button variant="outline" className="w-full text-left p-3 h-auto justify-start">
+                    <div>
+                      <div className="font-medium">Upload New Data</div>
+                      <div className="text-sm text-muted-foreground">CSV or JSON files</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/ai-analysis">
+                  <Button variant="outline" className="w-full text-left p-3 h-auto justify-start">
+                    <div>
+                      <div className="font-medium">Run AI Analysis</div>
+                      <div className="text-sm text-muted-foreground">Exoplanet detection</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/visualization">
+                  <Button variant="outline" className="w-full text-left p-3 h-auto justify-start">
+                    <div>
+                      <div className="font-medium">View Visualizations</div>
+                      <div className="text-sm text-muted-foreground">Interactive charts</div>
+                    </div>
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
